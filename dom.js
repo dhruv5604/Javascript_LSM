@@ -51,3 +51,12 @@ function addPart(){
 
     ipEl.focus();
 }
+
+
+function clickHandler(event){
+    console.log("Event on target = ",event.target);
+    console.log("Event called on current target ", event.currentTarget);
+}
+
+document.getElementById("outer").addEventListener("click",clickHandler);
+document.getElementById("inner").addEventListener("click",clickHandler);
