@@ -28,3 +28,26 @@ function changeClass(){
         ele.style.color = "red";
     }
 }
+
+
+function addPart(){
+    const ulEl = document.getElementById("parts");
+    let liEl = document.createElement("li");
+    
+    let ipEl = document.getElementById("part");
+    liEl.textContent = ipEl.value + " ";
+
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = function(){
+        ulEl.removeChild(liEl);
+    }
+
+    liEl.appendChild(removeBtn);
+
+    ulEl.appendChild(liEl);
+
+    ipEl.value = "";    
+
+    ipEl.focus();
+}
