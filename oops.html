@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //using object literal
+        let person = {
+            firstName : 'Dhruv',
+            lastName : 'Solanki',
+
+            getFunction : function(){
+                return `Name is ${person.firstName} ${person.lastName}`
+            },
+
+            phoneNumber : {
+                mobile : '123456',
+                landline : '678901'
+            }
+        }
+
+        console.log(person.getFunction());
+        console.log(person.phoneNumber.landline);
+
+
+        //using object constructor
+
+        function person1(firstName,lastName){
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        const p1 = new person1("Dhruv","Solanki");
+
+        console.log(p1.firstName,p1.lastName);
+    </script>
+</body>
+</html>
