@@ -102,3 +102,37 @@ let mycar1 = new Model('ford','mustang');
 document.getElementById("demo4").innerHTML += mycar1.show();
 
 document.getElementById("demo4").innerHTML += car.hello(mycar1);
+
+///map 
+
+function triple(n){
+    return n*3;
+}
+
+maparr = new Array(1,2,3,4,5);
+console.log(maparr);
+new_maparr = maparr.map(triple);
+console.log(new_maparr);
+
+////Reduce
+
+// function multiply(a,b){
+//     return a*b;
+// }
+
+reduceArr = new Array(1,2,3,4,5);
+console.log(reduceArr);
+var productOfArr = reduceArr.reduce((a,b)=>{
+    return a*b;
+});
+console.log("Product is ",productOfArr);
+
+
+//filter
+
+filter_arr = new Array(1,2,3,4,5,6,7,8);
+console.log(filter_arr);
+new_filterArr = filter_arr.filter((x)=>{
+    return x%2==0;
+})
+console.log(new_filterArr);
