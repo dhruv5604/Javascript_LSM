@@ -103,6 +103,7 @@ document.getElementById("demo4").innerHTML += mycar1.show();
 
 document.getElementById("demo4").innerHTML += car.hello(mycar1);
 
+
 ///map 
 
 function triple(n){
@@ -113,6 +114,7 @@ maparr = new Array(1,2,3,4,5);
 console.log(maparr);
 new_maparr = maparr.map(triple);
 console.log(new_maparr);
+
 
 ////Reduce
 
@@ -136,3 +138,61 @@ new_filterArr = filter_arr.filter((x)=>{
     return x%2==0;
 })
 console.log(new_filterArr);
+
+////Debounce
+
+// let btn = document.getElementById("btn");
+
+// const debounce = (func,delay) => {
+//     let debounceTimer;
+//     return function(){
+//         const context = this;
+//         const args = arguments;
+//         clearTimeout(debounceTimer);
+//         debounceTimer = setTimeout(()=>
+//             func.apply(context,args),delay);
+//     }
+// }
+
+// btn.addEventListener('click', debounce(function(){
+//     alert("Hello world");
+// },3000))
+
+const ip = document.querySelector("input");
+const defaultText = document.getElementById("default");
+const debounceText = document.getElementById("debounce");
+const throttleText = document.getElementById("throttle");
+
+const updateDebounceText = debounce(text=>{
+    debounceText.textContent = text;
+})
+
+ip.addEventListener("input", e =>{
+    defaultText.textContent = e.target.value;
+    updateDebounceText(e.target.value);
+})
+
+function debounce(cb,delay=1000){
+    let timeout;
+
+    return (...args) => {
+        clearTimeout(timeout)
+        timeout = setTimeout(()=>{
+            cb(...args);
+        },delay);
+    }
+}
+
+
+///local storage
+
+// const key = prompt("Enter the key")
+// const value = prompt("Enter the value")
+
+// localStorage.setItem(key,value)
+// console.log(localStorage.getItem(key))
+
+window.onstorage = (e) => {
+    alert('changed');
+    console.log(e);
+}
